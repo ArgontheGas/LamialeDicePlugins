@@ -835,35 +835,38 @@ end
 
 function egg10(msg)
 	local reptimes = 0
+	local E = "egg not found..."
 	repeat
 	function teneggs()
 
 		if pr(49.33) then
-		  local E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+		  E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
 	  
 		elseif pr(49.87) then
-		  local E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+		  E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
 	   
 		elseif pr(53.82) then
-			local E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+		  E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
 	  
 		elseif pr(77.07) then
-			local E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+		  E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
 	  
 		elseif pr(39.78) then
-			local E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+		  E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
 	  
 		elseif pr(48.15) then
-			local E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+		  E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
 	  
 		elseif pr(52.38) then
-			local E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+		  E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
 		else
-			local E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+		  E = strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
 		  end
+		
 		reptimes = reptimes + 1
+		return E
 	  end
-	until(reptimes == 10)
+	until reptimes > 9
 	return teneggs
 end
 
