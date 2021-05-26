@@ -1,6 +1,8 @@
 command = {}
 
-do --牌堆制作区
+
+
+do
   local breed = {"mirror","tundra","fae","guardian"}
 
   local color = {
@@ -181,7 +183,7 @@ do --牌堆制作区
 	"Bubblegum",
 	"Rose",
 	"Pearl"
-  }--如需多个牌堆按breed格式声明
+  }
  
 
   local eye = {"Common",
@@ -192,7 +194,7 @@ do --牌堆制作区
   "Goat",
   "Faceted",
   "Primal",
-  "Multigaze"}--如需多个牌堆按breed格式声明
+  "Multigaze"}
 
   local element = {"Arcane(奥术)",
   "Earth(地)",
@@ -795,7 +797,19 @@ local strbogsneak = "一枚脖子蛋的蛋壳裂开了，然后钻出一条颜�
 local strnocturne = "一枚夜曲蛋的蛋壳裂开了，然后钻出一条颜色分别为"
 local strbanescale = "一枚古脊蛋的蛋壳裂开了，然后钻出一条颜色分别为"
 
-function pr(num)--概率回复
+local eyeType = {
+  "Common",
+	"Uncommon",
+	"Unusual",
+	"Rare",
+	"Goat",
+	"Faceted",
+	"Goat",
+	"Primal",
+	"Multigaze"
+}
+
+function pr(num)
   local f = math.random(1,10000)
   if f <= num*100 then
     return true
@@ -804,429 +818,512 @@ function pr(num)--概率回复
   end
 end
 
+function eggType(eyeType)
+  return strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+  end
+
 
 function egg(msg)
 
   if pr(49.33) then
-    return strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return eggType("Common")
 
   elseif pr(49.87) then
-    return strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+   return eggType("Uncommon")
  
   elseif pr(53.82) then
-    return strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return eggType("Unusual")
 
   elseif pr(77.07) then
-    return strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return eggType("Rare")
 
   elseif pr(39.78) then
-    return strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return eggType("Goat")
 
   elseif pr(48.15) then
-    return strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return eggType("Faceted")
 
   elseif pr(52.38) then
-    return strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return eggType("Primal")
 
   else
-    return strdefault1..element[math.random(#element)]..strdefault2..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return eggType("Multigaze")
     end
 end
 
-function egg10(msg)
-		return egg..egg
-end
+--function egg10(msg)
+--  eggNum(msg, 10)
+--end
+
+--function eggNum(msg, num)
+--  for i = num, 1, -1 --num is largest number, 1 is destination
+--  do
+--   return egg(msg)
+--  end
+--end
+
+function bogSneakType(eyeType)
+   return strbogsneak..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)]..eyeType..streye..sex[math.random(#sex)].."Bogsneak"..strfullstop
+   end
+
 
 function bogsneak(msg)
   
     if pr(49.33) then
-      return strbogsneak..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."common"..streye..sex[math.random(#sex)].."bogsneak"..strfullstop
+      return bogSneakType("Common")
   
     elseif pr(49.87) then
-      return strbogsneak..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."uncommon"..streye..sex[math.random(#sex)].."bogsneak"..strfullstop
+      return bogSneakType("Uncommon")
    
     elseif pr(53.82) then
-      return strbogsneak..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."unusual"..streye..sex[math.random(#sex)].."bogsneak"..strfullstop
+      return bogSneakType("Unusual")
   
     elseif pr(77.07) then
-      return strbogsneak..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."rare"..streye..sex[math.random(#sex)].."bogsneak"..strfullstop
+      return bogSneakType("Rare")
   
     elseif pr(39.78) then
-      return strbogsneak..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."goat"..streye..sex[math.random(#sex)].."bogsneak"..strfullstop
+      return bogSneakType("Goat")
 
     elseif pr(48.15) then
-      return strbogsneak..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."faceted"..streye..sex[math.random(#sex)].."bogsneak"..strfullstop
+      return bogSneakType("Faceted")
   
     elseif pr(52.38) then
-      return strbogsneak..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."primal"..sex[math.random(#sex)].."bogsneak"..strfullstop
+      return bogSneakType("Primal")
   
     else
-      return strbogsneak..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."multigaze"..sex[math.random(#sex)].."bogsneak"..strfullstop
+      return bogSneakType("Multigaze")
       end
 end
+
+function nocturneType(eyeType)
+   return strnocturne..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)]..eyeType..streye..sex[math.random(#sex)].."nocturne"..strfullstop
+   end
+
 
 function nocturne(msg)
   
     if pr(49.33) then
-      return strnocturne..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."common"..streye..sex[math.random(#sex)].."nocturne"..strfullstop
+      return nocturneType("Common")
   
     elseif pr(49.87) then
-      return strnocturne..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."uncommon"..streye..sex[math.random(#sex)].."nocturne"..strfullstop
+      return nocturneType("Uncommon")
    
     elseif pr(53.82) then
-      return strnocturne..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."unusual"..streye..sex[math.random(#sex)].."nocturne"..strfullstop
+      return nocturneType("Unusual")
   
     elseif pr(77.07) then
-      return strnocturne..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."rare"..streye..sex[math.random(#sex)].."nocturne"..strfullstop
+      return nocturneType("Rare")
   
     elseif pr(39.78) then
-      return strnocturne..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."goat"..streye..sex[math.random(#sex)].."nocturne"..strfullstop
-  
+      return nocturneType("Goat")
+
     elseif pr(48.15) then
-      return strnocturne..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."faceted"..streye..sex[math.random(#sex)].."nocturne"..strfullstop
+      return nocturneType("Faceted")
   
     elseif pr(52.38) then
-      return strnocturne..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."primal"..streye..sex[math.random(#sex)].."nocturne"..strfullstop
+      return nocturneType("Primal")
   
     else
-      return strnocturne..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."multigaze"..streye..sex[math.random(#sex)].."nocturne"..strfullstop
+      return nocturneType("Multigaze")
       end
 end
+
+function banescaleType(eyeType)
+   return strbanescale..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)]..eyeType..streye..sex[math.random(#sex)].."banescale"..strfullstop
+   end
+
+
 
 function banescale(msg)
   
     if pr(49.33) then
-      return strbanescale..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."common"..streye..sex[math.random(#sex)].."banescale"..strfullstop
+      return banescaleType("Common")
   
     elseif pr(49.87) then
-      return strbanescale..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."uncommon"..streye..sex[math.random(#sex)].."banescale"..strfullstop
+      return banescaleType("Uncommon")
    
     elseif pr(53.82) then
-      return strbanescale..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."unusual"..streye..sex[math.random(#sex)].."banescale"..strfullstop
+      return banescaleType("Unusual")
   
     elseif pr(77.07) then
-      return strbanescale..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."rare"..streye..sex[math.random(#sex)].."banescale"..strfullstop
+      return banescaleType("Rare")
   
     elseif pr(39.78) then
-      return strbanescale..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."goat"..streye..sex[math.random(#sex)].."banescale"..strfullstop
-  
+      return banescaleType("Goat")
+
     elseif pr(48.15) then
-      return strbanescale..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."faceted"..streye..sex[math.random(#sex)].."banescale"..strfullstop
+      return banescaleType("Faceted")
   
     elseif pr(52.38) then
-      return strbanescale..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."primal"..streye..sex[math.random(#sex)].."banescale"..strfullstop
+      return banescaleType("Primal")
   
     else
-      return strbanescale..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..element[math.random(#element)].."multigaze"..sex[math.random(#sex)].."banescale"..strfullstop
+      return banescaleType("Multigaze")
       end
 end
 
+function arcaneType(eyeType)
+  return strarcane..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+  end
+
+
 function arcane(msg)
-  
-    if pr(49.33) then
-    return strarcane..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+
+  if pr(49.33) then
+    return arcaneType("Common")
 
   elseif pr(49.87) then
-    return strarcane..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+   return arcaneType("Uncommon")
  
   elseif pr(53.82) then
-    return strarcane..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return arcaneType("Unusual")
 
   elseif pr(77.07) then
-    return strarcane..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return arcaneType("Rare")
 
   elseif pr(39.78) then
-    return strarcane..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return arcaneType("Goat")
 
   elseif pr(48.15) then
-    return strarcane..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return arcaneType("Faceted")
 
   elseif pr(52.38) then
-    return strarcane..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return arcaneType("Primal")
 
   else
-    return strarcane..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return arcaneType("Multigaze")
     end
 end
+
+function earthType(eyeType)
+  return strearth..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+  end
+
 
 function earth(msg)
-  
+
   if pr(49.33) then
-  return strearth..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(49.87) then
-  return strearth..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(53.82) then
-  return strearth..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(77.07) then
-  return strearth..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(39.78) then
-  return strearth..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(48.15) then
-  return strearth..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(52.38) then
-  return strearth..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-else
-  return strearth..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-  end
-end
-
-function fire(msg)
-  
-  if pr(49.33) then
-  return strfire..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(49.87) then
-  return strfire..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(53.82) then
-  return strfire..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(77.07) then
-  return strfire..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(39.78) then
-  return strfire..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(48.15) then
-  return strfire..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(52.38) then
-  return strfire..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-else
-  return strfire..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-  end
-end
-
-function nature(msg)
-  
-  if pr(49.33) then
-  return strnature..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(49.87) then
-  return strnature..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(53.82) then
-  return strnature..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(77.07) then
-  return strnature..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(39.78) then
-  return strnature..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(48.15) then
-  return strnature..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(52.38) then
-  return strnature..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-else
-  return strnature..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-  end
-end
-
-function ice(msg)
-  
-  if pr(49.33) then
-  return strice..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(49.87) then
-  return strice..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(53.82) then
-  return strice..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(77.07) then
-  return strice..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(39.78) then
-  return strice..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(48.15) then
-  return strice..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(52.38) then
-  return strice..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-else
-  return strice..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-  end
-end
-
-function light(msg)
-  
-  if pr(49.33) then
-  return strlight..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(49.87) then
-  return strlight..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(53.82) then
-  return strlight..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(77.07) then
-  return strlight..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(39.78) then
-  return strlight..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(48.15) then
-  return strlight..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(52.38) then
-  return strlight..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-else
-  return strlight..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-  end
-end
-
-function plague(msg)
-  
-  if pr(49.33) then
-  return strplague..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(49.87) then
-  return strplague..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(53.82) then
-  return strplague..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(77.07) then
-  return strplague..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(39.78) then
-  return strplague..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(48.15) then
-  return strplague..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(52.38) then
-  return strplague..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-else
-  return strplague..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-  end
-end
-
-function shadow(msg)
-  
-  if pr(49.33) then
-  return strshadow..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(49.87) then
-  return strshadow..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(53.82) then
-  return strshadow..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(77.07) then
-  return strshadow..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(39.78) then
-  return strshadow..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(48.15) then
-  return strshadow..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(52.38) then
-  return strshadow..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-else
-  return strshadow..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-  end
-end
-
-  function lightning(msg)
-  
-    if pr(49.33) then
-    return strlightning..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return earthType("Common")
 
   elseif pr(49.87) then
-    return strlightning..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+   return earthType("Uncommon")
  
   elseif pr(53.82) then
-    return strlightning..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return earthType("Unusual")
 
   elseif pr(77.07) then
-    return strlightning..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return earthType("Rare")
 
   elseif pr(39.78) then
-    return strlightning..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return earthType("Goat")
 
   elseif pr(48.15) then
-    return strlightning..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return earthType("Faceted")
 
   elseif pr(52.38) then
-    return strlightning..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return earthType("Primal")
 
   else
-    return strlightning..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+    return earthType("Multigaze")
     end
 end
 
-function water(msg)
-  
-  if pr(49.33) then
-  return strwater..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(49.87) then
-  return strwater..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(53.82) then
-  return strwater..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(77.07) then
-  return strwater..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(39.78) then
-  return strwater..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(48.15) then
-  return strwater..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(52.38) then
-  return strwater..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-else
-  return strwater..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+function iceType(eyeType)
+  return strice..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
   end
+
+
+function ice(msg)
+
+  if pr(49.33) then
+    return iceType("Common")
+
+  elseif pr(49.87) then
+   return iceType("Uncommon")
+ 
+  elseif pr(53.82) then
+    return iceType("Unusual")
+
+  elseif pr(77.07) then
+    return iceType("Rare")
+
+  elseif pr(39.78) then
+    return iceType("Goat")
+
+  elseif pr(48.15) then
+    return iceType("Faceted")
+
+  elseif pr(52.38) then
+    return iceType("Primal")
+
+  else
+    return iceType("Multigaze")
+    end
 end
 
-function wind(msg)
-  
-  if pr(49.33) then
-  return strwind..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."common"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(49.87) then
-  return strwind..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."uncommon"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(53.82) then
-  return strwind..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."unusual"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(77.07) then
-  return strwind..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."rare"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(39.78) then
-  return strwind..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."goat"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(48.15) then
-  return strwind..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."faceted"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-elseif pr(52.38) then
-  return strwind..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."primal"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
-
-else
-  return strwind..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde.."multigaze"..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+function windType(eyeType)
+  return strwind..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
   end
+
+
+function wind(msg)
+
+  if pr(49.33) then
+    return windType("Common")
+
+  elseif pr(49.87) then
+   return windType("Uncommon")
+ 
+  elseif pr(53.82) then
+    return windType("Unusual")
+
+  elseif pr(77.07) then
+    return windType("Rare")
+
+  elseif pr(39.78) then
+    return windType("Goat")
+
+  elseif pr(48.15) then
+    return windType("Faceted")
+
+  elseif pr(52.38) then
+    return windType("Primal")
+
+  else
+    return windType("Multigaze")
+    end
+end
+
+function lightType(eyeType)
+  return strlight..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+  end
+
+
+function light(msg)
+
+  if pr(49.33) then
+    return lightType("Common")
+
+  elseif pr(49.87) then
+   return lightType("Uncommon")
+ 
+  elseif pr(53.82) then
+    return lightType("Unusual")
+
+  elseif pr(77.07) then
+    return iceType("Rare")
+
+  elseif pr(39.78) then
+    return lightType("Goat")
+
+  elseif pr(48.15) then
+    return lightType("Faceted")
+
+  elseif pr(52.38) then
+    return lightType("Primal")
+
+  else
+    return lightType("Multigaze")
+    end
+end
+
+
+function fireType(eyeType)
+  return strfire..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+  end
+
+
+function fire(msg)
+
+  if pr(49.33) then
+    return fireType("Common")
+
+  elseif pr(49.87) then
+   return fireType("Uncommon")
+ 
+  elseif pr(53.82) then
+    return fireType("Unusual")
+
+  elseif pr(77.07) then
+    return fireType("Rare")
+
+  elseif pr(39.78) then
+    return fireType("Goat")
+
+  elseif pr(48.15) then
+    return fireType("Faceted")
+
+  elseif pr(52.38) then
+    return fireType("Primal")
+
+  else
+    return fireType("Multigaze")
+    end
+end
+
+function lightningType(eyeType)
+  return strlightning..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+  end
+
+
+function lightning(msg)
+
+  if pr(49.33) then
+    return lightningType("Common")
+
+  elseif pr(49.87) then
+   return lightningType("Uncommon")
+ 
+  elseif pr(53.82) then
+    return lightningType("Unusual")
+
+  elseif pr(77.07) then
+    return lightningType("Rare")
+
+  elseif pr(39.78) then
+    return lightningType("Goat")
+
+  elseif pr(48.15) then
+    return lightningType("Faceted")
+
+  elseif pr(52.38) then
+    return lightningType("Primal")
+
+  else
+    return lightningType("Multigaze")
+    end
+end
+
+function natureType(eyeType)
+  return strnature..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+  end
+
+
+function nature(msg)
+
+  if pr(49.33) then
+    return natureType("Common")
+
+  elseif pr(49.87) then
+   return natureType("Uncommon")
+ 
+  elseif pr(53.82) then
+    return natureType("Unusual")
+
+  elseif pr(77.07) then
+    return natureType("Rare")
+
+  elseif pr(39.78) then
+    return natureType("Goat")
+
+  elseif pr(48.15) then
+    return natureType("Faceted")
+
+  elseif pr(52.38) then
+    return natureType("Primal")
+
+  else
+    return natureType("Multigaze")
+    end
+end
+
+function plagueType(eyeType)
+  return strplague..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+  end
+
+
+function plague(msg)
+
+  if pr(49.33) then
+    return plagueType("Common")
+
+  elseif pr(49.87) then
+   return plagueType("Uncommon")
+ 
+  elseif pr(53.82) then
+    return plagueType("Unusual")
+
+  elseif pr(77.07) then
+    return plagueType("Rare")
+
+  elseif pr(39.78) then
+    return plagueType("Goat")
+
+  elseif pr(48.15) then
+    return plagueType("Faceted")
+
+  elseif pr(52.38) then
+    return plagueType("Primal")
+
+  else
+    return plagueType("Multigaze")
+    end
+end
+
+function waterType(eyeType)
+  return strwater..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+  end
+
+
+function water(msg)
+
+  if pr(49.33) then
+    return waterType("Common")
+
+  elseif pr(49.87) then
+   return waterType("Uncommon")
+ 
+  elseif pr(53.82) then
+    return waterType("Unusual")
+
+  elseif pr(77.07) then
+    return waterType("Rare")
+
+  elseif pr(39.78) then
+    return waterType("Goat")
+
+  elseif pr(48.15) then
+    return waterType("Faceted")
+
+  elseif pr(52.38) then
+    return waterType("Primal")
+
+  else
+    return waterType("Multigaze")
+    end
+end
+
+function shadowType(eyeType)
+  return strshadow..color[math.random(#color)]..strdot..color[math.random(#color)]..strdot..color[math.random(#color)]..strde..eyeType..streye..sex[math.random(#sex)]..breed[math.random(#breed)]..strfullstop
+  end
+
+
+function shadow(msg)
+
+  if pr(49.33) then
+    return shadowType("Common")
+
+  elseif pr(49.87) then
+   return shadowType("Uncommon")
+ 
+  elseif pr(53.82) then
+    return shadowType("Unusual")
+
+  elseif pr(77.07) then
+    return shadowType("Rare")
+
+  elseif pr(39.78) then
+    return shadowType("Goat")
+
+  elseif pr(48.15) then
+    return shadowType("Faceted")
+
+  elseif pr(52.38) then
+    return shadowType("Primal")
+
+  else
+    return shadowType("Multigaze")
+    end
 end
 
 function name(msg)
