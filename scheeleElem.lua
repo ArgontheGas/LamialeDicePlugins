@@ -247,6 +247,67 @@ function draw(msg)
     end
 end
 
+function draw1(msg)
+    do
+        return "舍勒拿出了一叠卡片，抽出1张：\n"..elem[math.random(#elem)]
+    end
+end
+
+
+function draw2(msg)
+    do
+        return "舍勒拿出了一叠卡片，抽出2张：\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)]
+    end
+end
+
+function draw3(msg)
+    do
+        return "舍勒拿出了一叠卡片，抽出3张：\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)]
+    end
+end
+
+function draw4(msg)
+    do
+        return "舍勒拿出了一叠卡片，抽出4张：\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)]
+    end
+end
+
+function draw5(msg)
+    do
+        return "舍勒拿出了一叠卡片，抽出5张：\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)]
+    end
+end
+
+function draw6(msg)
+    do
+        return "舍勒拿出了一叠卡片，抽出6张：\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)]
+    end
+end
+
+function draw7(msg)
+    do
+        return "舍勒拿出了一叠卡片，抽出7张：\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)]
+    end
+end
+
+function draw8(msg)
+    do
+        return "舍勒拿出了一叠卡片，抽出8张：\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)]
+    end
+end
+
+function draw9(msg)
+    do
+        return "舍勒拿出了一叠卡片，抽出9张：\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)]
+    end
+end
+
+function draw10(msg)
+    do
+        return "舍勒拿出了一叠卡片，抽出10张：\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)].."\n"..elem[math.random(#elem)]
+    end
+end
+
 local strtoosmall = "没有0号元素及负数原子序数元素的资料！"
 local strtoobig = "暂时未记载原子序数119号及以上的元素……"
 
@@ -274,4 +335,14 @@ end
 
 command["(\\.|。)elem\\s(\\d+)"] = "element"
 command["(\\.|。)elem draw"] = "draw"
+command["(\\.|。)elem draw 1"] = "draw1"
+command["(\\.|。)elem draw 2"] = "draw2"
+command["(\\.|。)elem draw 3"] = "draw3"
+command["(\\.|。)elem draw 4"] = "draw4"
+command["(\\.|。)elem draw 5"] = "draw5"
+command["(\\.|。)elem draw 6"] = "draw6"
+command["(\\.|。)elem draw 7"] = "draw7"
+command["(\\.|。)elem draw 8"] = "draw8"
+command["(\\.|。)elem draw 9"] = "draw9"
+command["(\\.|。)elem draw 10"] = "draw10"
 command["(\\.|。)elem"]= "descr"
