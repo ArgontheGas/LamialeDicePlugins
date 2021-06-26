@@ -3,7 +3,7 @@ command = {}
 do
   local breed = {"Mirror(镜子)","Tundra(毛毛)","Fae(精灵)","Guardian(守护)"}
 
-  local color = {
+  local ref = {
     "Maize(嫩黄色)",
 	"Cream(奶油)",
 	"Antique(古董白)",
