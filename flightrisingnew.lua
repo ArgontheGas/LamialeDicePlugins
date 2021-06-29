@@ -3,185 +3,185 @@ command = {}
 do
   local breed = {"Mirror(镜子)","Tundra(毛毛)","Fae(精灵)","Guardian(守护)"}
 
-  local ref = {
-    "Maize(嫩黄色)",
-	"Cream(奶油)",
-	"Antique(古董白)",
-	"White(白色)",
-	"Moon(月白)",
-	"Ice(冰蓝)",
-	"Orca(虎鲸)",
-	"Platinum(银灰)",
-	"Silver(银色)",
-	"Dust(尘色)",
-	"Grey(灰色)",
-	"Smoke(烟色)",
-	"Gloom(幽暗)",
-	"Lead(铅色)",
-	"Shale(页岩)",
-	"Flint(燧石)",
-	"Charcoal(炭灰)",
-	"Coal(煤黑)",
-	"Oilslick(浮油)",
-	"Black(黑色)",
-	"Obsidian(黑曜)",
-	"Eldritch(骇人)",
-	"Midnight(午夜)",
-	"Shadow(影黑)",
-	"Blackberry(黑莓)",
-	"Mulberry(紫红色)",
-	"Plum(梅色)",
-	"Wisteria(紫藤)",
-	"Thisle(蓟色)",
-	"Fog(雾色)",
-	"Mist(薄雾色)",
-	"Lavender(淡紫)",
-	"Heather(石楠)",
-	"Purple(紫色)",
-	"Orchid(兰花紫)",
-	"Amethyst(紫晶)",
-	"Nightshade(茄色)",
-	"Violet(紫罗兰)",
-	"Grape(葡萄紫)",
-	"Royal(皇家紫)",
-	"Eggplant(茄子紫)",
-	"Iris(鸢尾紫)",
-	"Storm(风暴蓝)",
-	"Twilight(暮色)",
-	"Indigo(靛青)",
-	"Sapphire(宝蓝)",
-	"Navy(藏青)",
-	"Cobalt(钴蓝)",
-	"Ultramarine(群青)",
-	"Blue(蓝色)",
-	"Periwinkle(长春花蓝)",
-	"Lapis(青金石)",
-	"Splash(泼蓝)",
-	"Cornflower(矢车菊蓝)",
-	"Sky(天蓝)",
-	"Stonewash(石磨蓝)",
-	"Overcast(灰蓝)",
-	"Steel(钢青)",
-	"Denim(牛仔布蓝)",
-	"Abyss(深渊蓝)",
-	"Phthalo(酞青蓝)",
-	"Azure(湛蓝)",
-	"Caribbean(加勒比蓝)",
-	"Teal(鸭绿)",
-	"Cerulean(蔚蓝)",
-	"Cyan(青色)",
-	"Robin(罗宾蓝)",
-	"Aqua(水色)",
-	"Turquoise(绿松石)",
-	"Spruce(云杉绿)",
-	"Pistachio(开心果绿)",
-	"Seafoam(海泡色)",
-	"Mint(薄荷绿)",
-	"Jade(碧绿)",
-	"Spearmint(留兰香)",
-	"Thicket(灌木绿)",
-	"Peacock(孔雀绿)",
-	"Emerald(翠绿)",
-	"Shamrock(三叶草绿)",
-	"Jungle(丛林绿)",
-	"Hunter(猎人)",
-	"Forest(森林绿)",
-	"Camo(迷彩)",
-	"Algae(藻绿)",
-	"Swamp(沼泽绿)",
-	"Avocado(鳄梨色)",
-	"Green(绿色)",
-	"Fern(蕨绿)",
-	"Mantis(螳螂绿)",
-	"Pear(梨绿)",
-	"Leaf(叶绿)",
-	"Radioactive(辐射绿)",
-	"Honeydew(蜜瓜绿)",
-	"Peridot(橄榄石绿)",
-	"Chartreuse(黄绿)",
-	"Spring(春绿)",
-	"Crocodile(鳄绿)",
-	"Olive(橄榄绿)",
-	"Murk(暗绿)",
-	"Moss(苔绿)",
-	"Goldenrod(金桔色)",
-	"Amber(琥珀)",
-	"Honey(蜂蜜)",
-	"Lemon(柠檬)",
-	"Yellow(黄色)",
-	"Grapefruit(柚黄)",
-	"Banana(蕉黄)",
-	"Sanddollar(沙币)",
-	"Flaxen(麻黄)",
-	"Ivory(象牙)",
-	"Buttercup(毛莨黄)",
-	"Gold(金色)",
-	"Metals(金属色)",
-	"Marigold(万寿菊)",
-	"Sunshine(阳光色)",
-	"Saffron(藏红花)",
-	"Sunset(日落红)",
-	"Peach(桃红)",
-	"Cantaloupe(哈密瓜)",
-	"Orange(橘色)",
-	"Bronze(青铜)",
-	"Terracotta(红陶)",
-	"Carrot(胡萝卜)",
-	"Fire(火红)",
-	"Pumpkin(南瓜)",
-	"Tangerine(橙黄色)",
-	"Cinnamon(古铜)",
-	"Caramel(焦糖色)",
-	"Sand(沙色)",
-	"Tan(黄褐色)",
-	"Beige(米色)",
-	"Stone(石灰)",
-	"Taupe(灰褐色)",
-	"Slate(岩灰)",
-	"Driftwood(漂流木)",
-	"Latte(拿铁)",
-	"Dirt(泥土色)",
-	"Clay(黏土色)",
-	"Sable(黑貂)",
-	"Umber(棕土)",
-	"Soil(泥色)",
-	"Hickory(山核桃)",
-	"Tarnish(沾污色)",
-	"Ginger(生姜)",
-	"Brown(褐色)",
-	"Chocolate(巧克力色)",
-	"Auburn(赤褐色)",
-	"Copper(铜色)",
-	"Rust(锈红)",
-	"Tomato(番茄红)",
-	"Vermilion(朱红)",
-	"Ruby(红宝石)",
-	"Cherry(樱桃红)",
-	"Crimson(深茜红)",
-	"Garnet(石榴红)",
-	"Sanguine(血红)",
-	"Blood(血色)",
-	"Maroon(栗色)",
-	"Berry(浆果红)",
-	"Red(红色)",
-	"Strawberry(草莓红)",
-	"Cerise(樱桃色)",
-	"Carmine(胭脂红)",
-	"Brick(砖红)",
-	"Coral(珊瑚红)",
-	"Blush(腮红)",
-	"Cottoncandy(棉花糖)",
-	"Watermelon(西瓜红)",
-	"Magenta(洋红)",
-	"Fuschia(樱红)",
-	"Raspberry(覆盘子)",
-	"Wine(酒红)",
-	"Mauve(紫红)",
-	"Pink(粉红)",
-	"Bubblegum(泡泡糖)",
-	"Rose(玫瑰色)",
-	"Pearl(珍珠色)"
-  }
+  local ref = {}
+	ref["Maize"] = "Maize(嫩黄色)\n#FFFDEA 白色区\n色轮反色：Mantis、Pear\n副色\nPearl-Maize-Cream"
+	ref["Cream"] = "Cream(奶油)\n#FFEFDD 白色区\n色轮反色：Pear、Leaf\n副色\nMaize-Cream-Antique"
+	ref["Antique"] = "Antique(古董白)\n白色区\n色轮反色：、\n副色\nCream-Antique-White"
+	ref["White"] = "White(白色)\n白色区\n色轮反色：、\n副色\nAntique-White-Moon"
+	ref["Moon"] = "Moon(月白)\n白色区\n色轮反色：、\n副色\nWhite-Moon-Ice"
+	ref["Ice"] = "Ice(冰蓝)\n白色区\n色轮反色：、\n副色\nMoon-Ice-Orca"
+	ref["Orca"] = "Orca(虎鲸)\n灰色区\n色轮反色：、\n副色\nIce-Orca-Platinum"
+	ref["Platinum"] = "Platinum(银灰)\n灰色区\n色轮反色：、\n副色\nOrca-Platinum-Silver"
+	ref["Silver"] = "Silver(银色)\n灰色区\n色轮反色：、\n副色\nPlatinum-Silver-Dust"
+	ref["Dust"] = "Dust(尘色)\n灰色区\n色轮反色：、\n副色\nSilver-Dust-Grey"
+	ref["Grey"] = "Grey(灰色)\n灰色区\n色轮反色：、\n副色\nDust-Grey-Smoke"
+	ref["Smoke"] = "Smoke(烟色)\n灰色区\n色轮反色：、\n副色\nGrey-Smoke-Gloom"
+	ref["Gloom"] = "Gloom(幽暗)\n灰色区\n色轮反色：、\n副色\nSmoke-Gloom-Lead"
+	ref["Lead"] = "Lead(铅色)\n灰色区\n色轮反色：、\n副色\nGloom-Lead-Shale"
+	ref["Shale"] = "Shale(页岩)\n灰色区\n色轮反色：、\n副色\nLead-Shale-Flint"
+	ref["Flint"] = "Flint(燧石)\n灰色区\n色轮反色：、\n副色\nShale-Flint-Charcoal"
+	ref["Charcoal"] = "Charcoal(炭灰)\n灰色区\n色轮反色：、\n副色\nFlint-Charcoal-Coal"
+	ref["Coal"] = "Coal(煤黑)\n灰色区\n色轮反色：、\n副色\nCharcoal-Coal-Oilslick"
+	ref["Oilslick"] = "Oilslick(浮油)\n黑色区\n色轮反色：、\n副色\nCoal-Oilslick-Black"
+	ref["Black"] = "Black(黑色)\n黑色区\n色轮反色：、\n副色\nOilslick-Black-Obsidian"
+	ref["Obsidian"] = "Obsidian(黑曜)\n黑色区\n色轮反色：、\n副色\nBlack-Obsidian-Eldritch"
+	ref["Eldritch"] = "Eldritch(骇人)\n黑色区\n色轮反色：、\n副色\nObsidian-Eldritch-Midnight"
+	ref["Midnight"] = "Midnight(午夜)\n黑色区\n色轮反色：、\n副色\nEldritch-Midnight-Shadow"
+	ref["Shadow"] = "Shadow(影黑)\n黑色区\n色轮反色：、\n副色\nMidnight-Shadow-Blackberry"
+	ref["Blackberry"] = "Blackberry(黑莓)\n紫色区\n色轮反色：、\n副色\nShadow-Blackberry-Mulberry"
+	ref["Mulberry"] = "Mulberry(紫红色)\n紫色区\n色轮反色：、\n副色\nBlackberry-Mulberry-Plum"
+	ref["Plum"] = "Plum(梅色)\n紫色区\n色轮反色：、\n副色\nMulberry-Plum-Wisteria"
+	ref["Wisteria"] = "Wisteria(紫藤)\n紫色区\n色轮反色：、\n副色\nPlum-Wisteria-Thistle"
+	ref["Thistle"] = "Thistle(蓟色)\n区\n紫色色轮反色：、\n副色\nWisteria-Thistle-Fog"
+	ref["Fog"] = "Fog(雾色)\n区\n紫色色轮反色：、\n副色\nThistle-Fog-Mist"
+	ref["Mist"] = "Mist(薄雾色)\n紫色区\n色轮反色：、\n副色\nFog-Mist-Lavender"
+	ref["Lavender"] = "Lavender(淡紫)\n紫色区\n色轮反色：、\n副色\nMist-Lavender-Heather"
+	ref["Heather"] = "Heather(石楠)\n紫色区\n色轮反色：、\n副色\nLavender-Heather-Purple"
+	ref["Purple"] = "Purple(紫色)\n紫色区\n色轮反色：、\n副色\nHeather-Purple-Orchid"
+	ref["Orchid"] = "Orchid(兰花紫)\n紫色区\n色轮反色：、\n副色\nPurple-Orchid-Amethyst"
+	ref["Amethyst"] = "Amethyst(紫晶)\n紫色区\n色轮反色：、\n副色\nOrchid-Amethyst-Nightshade"
+	ref["Nightshade"] = "Nightshade(茄色)\n紫色区\n色轮反色：、\n副色\nAmethyst-Nightshade-Violet"
+	ref["Violet"] = "Violet(紫罗兰)\n区\n色轮反色：、\n副色\nNightshade-Violet-Grape"
+	ref["Grape"] = "Grape(葡萄紫)\n紫色区\n色轮反色：、\n副色\nViolet-Grape-Royal"
+	ref["Royal"] = "Royal(皇家紫)\n紫色区\n色轮反色：、\n副色\nGrape-Royal-Eggplant"
+	ref["Eggplant"] = "Eggplant(茄子紫)\n紫色区\n色轮反色：、\n副色\nRoyal-Eggplant-Iris"
+	ref["Iris"] = "Iris(鸢尾紫)\n紫色区\n色轮反色：、\n副色\nEggplant-Iris-Storm"
+	ref["Storm"] = "Storm(风暴蓝)\n蓝色区\n色轮反色：、\n副色\nIris-Storm-Twilight"
+	ref["Twilight"] = "Twilight(暮色)\n蓝色区\n色轮反色：、\n副色\nStorm-Twilight-Indigo"
+	ref["Indigo"] = "Indigo(靛青)\n区\n蓝色色轮反色：、\n副色\nTwilight-Indigo-Sapphire"
+	ref["Sapphire"] = "Sapphire(宝蓝)\n蓝色区\n色轮反色：、\n副色\nIndigo-Sapphire-Navy"
+	ref["Navy"] = "Navy(藏青)\n蓝色区\n色轮反色：、\n副色\nSapphire-Navy-Cobalt"
+	ref["Cobalt"] = "Cobalt(钴蓝)\n蓝色区\n色轮反色：、\n副色\nNavy-Cobalt-Ultramarine"
+	ref["Ultramarine"] = "Ultramarine(群青)\n蓝色区\n色轮反色：、\n副色\nCobalt-Ultramarine-Blue"
+	ref["Blue"] = "Blue(蓝色)\n蓝色区\n色轮反色：、\n副色\nUltramarine-Blue-Periwinkle"
+	ref["Periwinkle"] = "Periwinkle(长春花蓝)\n蓝色区\n色轮反色：、\n副色\nBlue-Periwinkle-Lapis"
+	ref["Lapis"] = "Lapis(青金石)\n蓝色区\n色轮反色：、\n副色\nPeriwinkle-Lapis-Splash"
+	ref["Splash"] = "Splash(泼蓝)\n蓝色区\n色轮反色：、\n副色\nLapis-Splash-Cornflower"
+	ref["Cornflower"] = "Cornflower(矢车菊蓝)\n蓝色区\n色轮反色：、\n副色\nSplash-Cornflower-Sky"
+	ref["Sky"] = "Sky(天蓝)\n蓝色区\n色轮反色：、\n副色\nCornflower-Sky-Stonewash"
+	ref["Stonewash"] = "Stonewash(石磨蓝)\n蓝色区\n色轮反色：、\n副色\nSky-Stonewash-Overcast"
+	ref["Overcast"] = "Overcast(灰蓝)\n蓝色区\n色轮反色：、\n副色\nStonewash-Overcast-Steel"
+	ref["Steel"] = "Steel(钢青)\n蓝色区\n色轮反色：、\n副色\nOvercast-Steel-Denim"
+	ref["Denim"] = "Denim(牛仔布蓝)\n蓝色区\n色轮反色：、\n副色\nSteel-Denim-Abyss"
+	ref["Abyss"] = "Abyss(深渊蓝)\n蓝色区\n色轮反色：、\n副色\nDenim-Abyss-Phthalo"
+	ref["Phthalo"] = "Phthalo(酞青蓝)\n蓝色区\n色轮反色：、\n副色\nAbyss-Phthalo-Azure"
+	ref["Azure"] = "Azure(湛蓝)\n蓝色区\n色轮反色：、\n副色\nPhthalo-Azure-Caribbean"
+	ref["Caribbean"] = "Caribbean(加勒比蓝)\n蓝色区\n色轮反色：、\n副色\nAzure-Caribbean-Teal"
+	ref["Teal"] = "Teal(鸭绿)\n青色区\n色轮反色：、\n副色\nCaribbean-Teal-Cerulean"
+	ref["Cerulean"] = "Cerulean(蔚蓝)\n青色区\n色轮反色：、\n副色\nTeal-Cerulean-Cyan"
+	ref["Cyan"] = "Cyan(青色)\n青色区\n色轮反色：、\n副色\nCerulean-Cyan-Robin"
+	ref["Robin"] = "Robin(罗宾蓝)\n青色区\n色轮反色：、\n副色\nCyan-Robin-Aqua"
+	ref["Aqua"] = "Aqua(水色)\n青色区\n色轮反色：、\n副色\nRobin-Aqua-Turquoise"
+	ref["Turquoise"] = "Turquoise(绿松石)\n青色区\n色轮反色：、\n副色\nAqua-Turquoise-Spruce"
+	ref["Spruce"] = "Spruce(云杉绿)\n绿色区\n色轮反色：、\n副色\nTurquoise-Spruce-Pistachio"
+	ref["Pistachio"] = "Pistachio(开心果绿)\n绿色区\n色轮反色：、\n副色\nSpruce-Pistachio-Seafoam"
+	ref["Seafoam"] = "Seafoam(海泡色)\n绿色区\n色轮反色：、\n副色\nPistachio-Seafoam-Mint"
+	ref["Mint"] = "Mint(薄荷绿)\n绿色区\n色轮反色：、\n副色\nSeafoam-Mint-Jade"
+	ref["Jade"] = "Jade(碧绿)\n绿色区\n色轮反色：、\n副色\nMint-Jade-Spearmint"
+	ref["Spearmint"] = "Spearmint(留兰香)\n绿色区\n色轮反色：、\n副色\nJade-Spearmint-Thicket"
+	ref["Thicket"] = "Thicket(灌木绿)\n绿色区\n色轮反色：、\n副色\nSpearmint-Thicket-Peacock"
+	ref["Peacock"] = "Peacock(孔雀绿)\n绿色区\n色轮反色：、\n副色\nThicket-Peacock-Emerald"
+	ref["Emerald"] = "Emerald(翠绿)\n绿色区\n色轮反色：、\n副色\nPeacock-Emerald-Shamrock"
+	ref["Shamrock"] = "Shamrock(三叶草绿)\n绿色区\n色轮反色：、\n副色\nEmerald-Shamrock-Jungle"
+	ref["Jungle"] = "Jungle(丛林绿)\n绿色区\n色轮反色：、\n副色\nShamrock-Jungle-Hunter"
+	ref["Hunter"] = "Hunter(猎人)\n绿色区\n色轮反色：、\n副色\nJungle-Hunter-Forest"
+	ref["Forest"] = "Forest(森林绿)\n区\n色轮反色：、\n副色\nHunter-Forest-Camo"
+	ref["Camo"] = "Camo(迷彩)\n绿色区\n色轮反色：、\n副色\nForest-Camo-Algae"
+	ref["Algae"] = "Algae(藻绿)\n绿色区\n色轮反色：、\n副色\nCamo-Algae-Swamp"
+	ref["Swamp"] = "Swamp(沼泽绿)\n绿色区\n色轮反色：、\n副色\nAlgae-Swamp-Avocado"
+	ref["Avocado"] = "Avocado(鳄梨色)\n绿色区\n色轮反色：、\n副色\nSwamp-Avocado-Green"
+	ref["Green"] = "Green(绿色)\n绿色区\n色轮反色：、\n副色\nAvocado-GreenFern-"
+	ref["Fern"] = "Fern(蕨绿)\n绿色区\n色轮反色：、\n副色\nGreen-Fern-Mantis"
+	ref["Mantis"] = "Mantis(螳螂绿)\n绿色区\n色轮反色：、\n副色\nFern-Mantis-Pear"
+	ref["Pear"] = "Pear(梨绿)\n黄绿色区\n色轮反色：、\n副色\nMantis-Pear-Leaf"
+	ref["Leaf"] = "Leaf(叶绿)\n黄绿色区\n色轮反色：、\n副色\nPear-Leaf-Radioactive"
+	ref["Radioactive"] = "Radioactive(辐射绿)\n黄绿色区\n色轮反色：、\n副色\nLeaf-Radioactive-Honeydew"
+	ref["Honeydew"] = "Honeydew(蜜瓜绿)\n黄绿色区\n色轮反色：、\n副色\nRadioactive-Honeydew-Peridot"
+	ref["Peridot"] = "Peridot(橄榄石绿)\n黄绿色区\n色轮反色：、\n副色\nHoneydew-Peridot-Chartreuse"
+	ref["Chartreuse"] = "Chartreuse(黄绿)\n黄绿色区\n色轮反色：、\n副色\nPeridot-Chartreuse-Spring"
+	ref["Spring"] = "Spring(春绿)\n黄绿色区\n色轮反色：、\n副色\nChartreuse-Spring-Crocodile"
+	ref["Crocodile"] = "Crocodile(鳄绿)\n黄绿色区\n色轮反色：、\n副色\nSpring-Crocodile-Olive"
+	ref["Olive"] = "Olive(橄榄绿)\n黄绿色区\n色轮反色：、\n副色\nCrocodile-Olive-Murk"
+	ref["Murk"] = "Murk(暗绿)\n黄绿色区\n色轮反色：、\n副色\nOlive-Murk-Moss"
+	ref["Moss"] = "Moss(苔绿)\n黄绿色区\n色轮反色：、\n副色\nMurk-Moss-Goldenrod"
+	ref["Goldenrod"] = "Goldenrod(金桔色)\n黄色区\n色轮反色：、\n副色\nMoss-Goldenrod-Amber"
+	ref["Amber"] = "Amber(琥珀)\n黄色区\n色轮反色：、\n副色\nGoldenrod-Amber-Honey"
+	ref["Honey"] = "Honey(蜂蜜)\n黄色区\n色轮反色：、\n副色\nAmber-Honey-Lemon"
+	ref["Lemon"] = "Lemon(柠檬)\n黄色区\n色轮反色：、\n副色\nHoney-Lemon-Yellow"
+	ref["Yellow"] = "Yellow(黄色)\n黄色区\n色轮反色：、\n副色\nLemon-Yellow-Grapefruit"
+	ref["Grapefruit"] = "Grapefruit(柚黄)\n黄色区\n色轮反色：、\n副色\nYellow-Grapefruit-Banana"
+	ref["Banana"] = "Banana(蕉黄)\n黄色区\n色轮反色：、\n副色\nGrapefruit-Banana-Sanddollar"
+	ref["Sanddollar"] = "Sanddollar(沙币)\n黄色区\n色轮反色：、\n副色\nBanana-Sanddollar-Flaxen"
+	ref["Flaxen"] = "Flaxen(麻黄)\n黄色区\n色轮反色：、\n副色\nSanddollar-Flaxen-Ivory"
+	ref["Ivory"] = "Ivory(象牙)\n橘色区\n色轮反色：、\n副色\nFlaxen-Ivory-Buttercup"
+	ref["Buttercup"] = "Buttercup(毛莨黄)\n橘色区\n色轮反色：、\n副色\nIvory-Buttercup-Gold"
+	ref["Gold"] = "Gold(金色)\n橘色区\n色轮反色：、\n副色\nButtercup-Gold-Metal"
+	ref["Metals"] = "Metals(金属色)\n橘色区\n色轮反色：、\n副色\nGold-Metal-Marigold"
+	ref["Marigold"] = "Marigold(万寿菊)\n橘色区\n色轮反色：、\n副色\nMetal-Marigold-Sunshine"
+	ref["Sunshine"] = "Sunshine(阳光色)\n橘色区\n色轮反色：、\n副色\nMarigold-Sunshine-Saffron"
+	ref["Saffron"] = "Saffron(藏红花)\n橘色区\n色轮反色：、\n副色\nSunshine-Saffron-Sunset"
+	ref["Sunset"] = "Sunset(日落红)\n橘色区\n色轮反色：、\n副色\nSaffron-Sunset-Peach"
+	ref["Peach"] = "Peach(桃红)\n橘色区\n色轮反色：、\n副色\nSunset-Peach-Cantaloupe"
+	ref["Cantaloupe"] = "Cantaloupe(哈密瓜)\n橘色区\n色轮反色：、\n副色\nPeach-Cantaloupe-Orange"
+	ref["Orange"] = "Orange(橘色)\n橘色区\n色轮反色：、\n副色\nCantaloupe-Orange-Bronze"
+	ref["Bronze"] = "Bronze(青铜)\n橘色区\n色轮反色：、\n副色\nOrange-Bronze-Terracotta"
+	ref["Terracotta"] = "Terracotta(红陶)\n橘色区\n色轮反色：、\n副色\nBronze-Terracotta-Carrot"
+	ref["Carrot"] = "Carrot(胡萝卜)\n橘色区\n色轮反色：、\n副色\nTerracotta-Carrot-Fire"
+	ref["Fire"] = "Fire(火红)\n橘色区\n色轮反色：、\n副色\nCarrot-Fire-Pumpkin"
+	ref["Pumpkin"] = "Pumpkin(南瓜)\n橘色区\n色轮反色：、\n副色\nFire-Pumpkin-Tangerine"
+	ref["Tangerine"] = "Tangerine(橙黄色)\n橘色区\n色轮反色：、\n副色\nPumpkin-Tangerine-Cinnamon"
+	ref["Cinnamon"] = "Cinnamon(古铜)\n棕色区\n色轮反色：、\n副色\nTangerine-Cinnamon-Caramel"
+	ref["Caramel"] = "Caramel(焦糖色)\n棕色区\n色轮反色：、\n副色\nCinnamon-Caramel-Sand"
+	ref["Sand"] = "Sand(沙色)\n棕色区\n色轮反色：、\n副色\nCaramel-Sand-Tan"
+	ref["Tan"] = "Tan(黄褐色)\n棕色区\n色轮反色：、\n副色\nSand-Tan-Beige"
+	ref["Beige"] = "Beige(米色)\n棕色区\n色轮反色：、\n副色\nTan-Beige-Stone"
+	ref["Stone"] = "Stone(石灰)\n棕色区\n色轮反色：、\n副色\nBeige-Stone-Taupe"
+	ref["Taupe"] = "Taupe(灰褐色)\n棕色区\n色轮反色：、\n副色\nStone-Taupe-Slate"
+	ref["Slate"] = "Slate(岩灰)\n棕色区\n色轮反色：、\n副色\nTaupe-Slate-Driftwood"
+	ref["Driftwood"] = "Driftwood(漂流木)\n棕色区\n色轮反色：、\n副色\nSlate-Driftwood-Latte"
+	ref["Latte"] = "Latte(拿铁)\n棕色区\n色轮反色：、\n副色\nDriftwood-Latte-Dirt"
+	ref["Dirt"] = "Dirt(泥土色)\n棕色区\n色轮反色：、\n副色\nLatte-Dirt-Clay"
+	ref["Clay"] = "Clay(黏土色)\n棕色区\n色轮反色：、\n副色\nDirt-Clay-Sable"
+	ref["Sable"] = "Sable(黑貂)\n棕色区\n色轮反色：、\n副色\nClay-Sable-Umber"
+	ref["Umber"] = "Umber(棕土)\n棕色区\n色轮反色：、\n副色\nSable-Umber-Soil"
+	ref["Soil"] = "Soil(泥色)\n棕色区\n色轮反色：、\n副色\nUmber-Soil-Hickory"
+	ref["Hickory"] = "Hickory(山核桃)\n棕色区\n色轮反色：、\n副色\nSoil-Hickory-Tarnish"
+	ref["Tarnish"] = "Tarnish(沾污色)\n棕色区\n色轮反色：、\n副色\nHickory-Tarnish-Ginger"
+	ref["Ginger"] = "Ginger(生姜)\n棕色区\n色轮反色：、\n副色\nTarnish-Ginger-Brown"
+	ref["Brown"] = "Brown(褐色)\n棕色区\n色轮反色：、\n副色\nGinger-Brown-Chocolate"
+	ref["Chocolate"] = "Chocolate(巧克力色)\n棕色区\n色轮反色：、\n副色\nBrown-Chocolate-Auburn"
+	ref["Auburn"] = "Auburn(赤褐色)\n棕色区\n色轮反色：、\n副色\nChocolate-Auburn-Copper"
+	ref["Copper"] = "Copper(铜色)\n棕色区\n色轮反色：、\n副色\nAuburn-Copper-Rust"
+	ref["Rust"] = "Rust(锈红)\n红色区\n色轮反色：、\n副色\nCopper-Rust-Tomato"
+	ref["Tomato"] = "Tomato(番茄红)\n红色区\n色轮反色：、\n副色\nRust-Tomato-Vermilion"
+	ref["Vermilion"] = "Vermilion(朱红)\n红色区\n色轮反色：、\n副色\nTomato-Vermilion-Ruby"
+	ref["Ruby"] = "Ruby(红宝石)\n红色区\n色轮反色：、\n副色\nVermilion-Ruby-Cherry"
+	ref["Cherry"] = "Cherry(樱桃红)\n红色区\n色轮反色：、\n副色\nRuby-Cherry-Crimson"
+	ref["Crimson"] = "Crimson(深茜红)\n红色区\n色轮反色：、\n副色\nCherry-Crimson-Garnet"
+	ref["Garnet"] = "Garnet(石榴红)\n红色区\n色轮反色：、\n副色\nCrimson-Garnet-Sanguine"
+	ref["Sanguine"] = "Sanguine(血红)\n红色区\n色轮反色：、\n副色\nGarnet-Sanguine-Blood"
+	ref["Blood"] = "Blood(血色)\n红色区\n色轮反色：、\n副色\nSanguine-Blood-Maroon"
+	ref["Maroon"] = "Maroon(栗色)\n红色区\n色轮反色：、\n副色\nBlood-Maroon-Berry"
+	ref["Berry"] = "Berry(浆果红)\n红色区\n色轮反色：、\n副色\nMaroon-Berry-Red"
+	ref["Red"] = "Red(红色)\n红色区\n色轮反色：、\n副色\nBerry-Red-Strawberry"
+	ref["Strawberry"] = "Strawberry(草莓红)\n红色区\n色轮反色：、\n副色\nRed-Strawberry-Cerise"
+	ref["Cerise"] = "Cerise(樱桃色)\n红色区\n色轮反色：、\n副色\nStrawberry-Cerise-Carmine"
+	ref["Carmine"] = "Carmine(胭脂红)\n红色区\n色轮反色：、\n副色\nCerise-Carmine-Brick"
+	ref["Brick"] = "Brick(砖红)\n粉色区\n色轮反色：、\n副色\nCarmine-Brick-Coral"
+	ref["Coral"] = "Coral(珊瑚红)\n粉色区\n色轮反色：、\n副色\nBrick-Coral-Blush"
+	ref["Blush"] = "Blush(腮红)\n粉色区\n色轮反色：、\n副色\nCoral-Blush-Cottoncandy"
+	ref["Cottoncandy"] = "Cottoncandy(棉花糖)\n粉色区\n色轮反色：、\n副色\nBlush-Cottoncandy-Watermelon"
+	ref["Watermelon"] = "Watermelon(西瓜红)\n粉色区\n色轮反色：、\n副色\nCottoncandy-Watermelon-Magenta"
+	ref["Magenta"] = "Magenta(洋红)\n粉色区\n色轮反色：、\n副色\nWatermelon-Magenta-Fuschia"
+	ref["Fuschia"] = "Fuschia(樱红)\n粉色区\n色轮反色：、\n副色\nMagenta-Fuschia-Raspberry"
+	ref["Raspberry"] = "Raspberry(覆盘子)\n粉色区\n色轮反色：、\n副色\nFuschia-Raspberry-"
+	ref["Wine"] = "Wine(酒红)\n粉色区\n色轮反色：、\n副色\nRaspberry-Wine-Mauve"
+	ref["Mauve"] = "Mauve(紫红)\n粉色区\n色轮反色：、\n副色\nWine-Mauve-Pink"
+	ref["Pink"] = "Pink(粉红)\n粉色区\n色轮反色：、\n副色\nMauve-Pink-Bubblegum"
+	ref["Bubblegum"] = "Bubblegum(泡泡糖)\n粉色区\n色轮反色：、\n副色\nPink-Bubblegum-Rose"
+	ref["Rose"] = "Rose(玫瑰色)\n粉色区\n色轮反色：、\n副色\nBubblegum-Rose-Pearl"
+	ref["Pearl"] = "Pearl(珍珠色)\n粉色区\n色轮反色：、\n副色\nRose-Pearl-Maize"
+
 
     local color = {
     "Maize(嫩黄色)",
@@ -212,7 +212,7 @@ do
 	"Mulberry(紫红色)",
 	"Plum(梅色)",
 	"Wisteria(紫藤)",
-	"Thisle(蓟色)",
+	"Thistle(蓟色)",
 	"Fog(雾色)",
 	"Mist(薄雾色)",
 	"Lavender(淡紫)",
@@ -1184,8 +1184,19 @@ function namewater(msg)
   end
 end
 
+local strnotfound = "找不到该颜色"
+
+function colorsearch(msg)
+local a = msg.str[2]
+local b = ref[a]
+if b ~= nil then
+    return b
+    else return strnotfound
 end
 
+end
+
+end
 
 command ["(\\.|。)fr (\\奥术|奥术蛋|Arcane|arcane)"] = "arcane"
 command ["(\\.|。)fr (\\地|地蛋|Earth|earth)"] = "earth"
@@ -1231,3 +1242,4 @@ command ["(\\.|。)fr name shadow"] = "nameshadow"
 command ["(\\.|。)fr name lightning"] = "namelightning"
 command ["(\\.|。)fr name water"] = "namewater"
 command ["(\\.|。)fr name wind"] = "namewind"
+command["(\\.|。)fr color \\s(\\D+)"] = "colorsearch"
